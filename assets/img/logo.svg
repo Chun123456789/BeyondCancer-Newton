@@ -1,0 +1,27 @@
+<svg viewBox="0 0 560 580" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Beyond Cancer — The Newton Sixth Form</title>
+  <defs>
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0dcae"/>
+      <stop offset="55%" stop-color="#d9b979"/>
+      <stop offset="100%" stop-color="#c3a05c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="560" height="580" rx="28" fill="#151d4a"/>
+
+  <text x="280" y="255" text-anchor="middle" font-family="'Poppins','Segoe UI',sans-serif" font-weight="800" font-size="88" letter-spacing="2" fill="#ffffff">BEYOND</text>
+  <text x="280" y="330" text-anchor="middle" font-family="'Poppins','Segoe UI',sans-serif" font-weight="800" font-size="88" letter-spacing="2" fill="#ffffff">CANCER</text>
+
+  <!-- Awareness ribbon overlapping the two lines of text -->
+  <g transform="translate(280,292)">
+    <path d="M -20 -75 C -34 -40 -34 -10 -14 18 C -6 28 0 34 0 34 C 0 34 6 28 14 18 C 34 -10 34 -40 20 -75 C 12 -60 -12 -60 -20 -75 Z" fill="url(#ribbonGrad)"/>
+    <path d="M 0 34 C -6 46 -30 58 -46 54 C -34 40 -22 30 -10 26 Z" fill="url(#ribbonGrad)"/>
+    <path d="M 0 34 C 6 46 30 58 46 54 C 34 40 22 30 10 26 Z" fill="url(#ribbonGrad)"/>
+    <g fill="#ffffff">
+      <path d="M 24 -68 l 4 10 l 10 4 l -10 4 l -4 10 l -4 -10 l -10 -4 l 10 -4 Z"/>
+    </g>
+  </g>
+
+  <text x="280" y="385" text-anchor="middle" font-family="'Poppins','Segoe UI',sans-serif" font-style="italic" font-size="26" letter-spacing="1" fill="#c7cdea">The Newton Sixth Form</text>
+</svg>
