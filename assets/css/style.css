@@ -388,6 +388,153 @@ h2.section-title {
 }
 .highlight-pill:hover { background: var(--gold-light); border-color: var(--gold); }
 
+/* ---------- Photo grid (side-by-side, e.g. literature reviews) ---------- */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.photo-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: zoom-in;
+}
+.photo-card .photo-frame {
+  background: var(--paper-dim);
+  display: flex;
+}
+.photo-card img { width: 100%; height: 320px; object-fit: contain; display: block; }
+.photo-card .photo-caption {
+  padding: 14px 18px;
+  font-size: 13.5px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Volunteering sub-groups + photo stack ---------- */
+.volunteering-block { margin-bottom: 34px; }
+.volunteering-block:last-child { margin-bottom: 0; }
+
+.sub-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.sub-head .sub-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--navy);
+  background: var(--paper-dim);
+  border: 1px solid var(--line);
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+}
+
+.single-photo-row { display: flex; }
+
+.photo-stack {
+  position: relative;
+  width: 270px;
+  max-width: 100%;
+  cursor: zoom-in;
+}
+.photo-stack .stack-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.photo-stack .stack-layer.l1 { transform: rotate(-5deg) translate(-8px, 6px); z-index: 1; }
+.photo-stack .stack-layer.l2 { transform: rotate(4deg) translate(8px, 3px); z-index: 2; }
+.photo-stack .stack-cover {
+  position: relative;
+  z-index: 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+.photo-stack .stack-cover img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s;
+}
+.photo-stack:hover .stack-cover img { transform: scale(1.05); }
+.photo-stack .stack-count {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: var(--navy);
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 18, 48, 0.92);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 80px;
+}
+.lightbox.open { display: flex; }
+.lightbox-inner { position: relative; max-width: 900px; width: 100%; text-align: center; }
+.lightbox-inner img {
+  max-height: 76vh;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.lightbox-caption { color: #dfe2f2; font-size: 14px; margin-top: 16px; }
+.lightbox-counter { color: var(--gold-light); font-size: 12.5px; margin-top: 6px; letter-spacing: 0.5px; }
+
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  line-height: 1;
+}
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.28); }
+.lightbox-close { top: -46px; right: 0; width: 38px; height: 38px; font-size: 20px; }
+.lightbox-prev, .lightbox-next { top: 50%; transform: translateY(-50%); width: 48px; height: 48px; font-size: 20px; }
+.lightbox-prev { left: -68px; }
+.lightbox-next { right: -68px; }
+
+@media (max-width: 760px) {
+  .lightbox { padding: 60px 16px; }
+  .lightbox-prev { left: 4px; }
+  .lightbox-next { right: 4px; }
+  .lightbox-close { top: -40px; right: 0; }
+}
+
 /* ---------- Instagram / contact ---------- */
 .ig-card {
   background: linear-gradient(135deg, var(--navy), var(--navy-light));
