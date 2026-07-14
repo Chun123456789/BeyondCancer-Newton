@@ -417,8 +417,14 @@ h2.section-title {
 }
 
 /* ---------- Volunteering sub-groups + photo stack ---------- */
-.volunteering-block { margin-bottom: 34px; }
-.volunteering-block:last-child { margin-bottom: 0; }
+.volunteering-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.volunteering-block { margin-bottom: 0; }
 
 .sub-head {
   display: flex;
@@ -437,12 +443,9 @@ h2.section-title {
   letter-spacing: 0.3px;
 }
 
-.single-photo-row { display: flex; }
-
 .photo-stack {
   position: relative;
-  width: 270px;
-  max-width: 100%;
+  width: 100%;
   cursor: zoom-in;
 }
 .photo-stack .stack-layer {
